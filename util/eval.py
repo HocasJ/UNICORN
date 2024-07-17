@@ -28,9 +28,9 @@ def tester(args, epoch, main_net, test_mode, gall_label, gall_loader, query_labe
             ptr = ptr + batch_num
     # print("Extracting Time:\t {:.3f}".format(time.time() - start))
 
-    # np.save('/root/M3P/wangwq/gall_feat.npy', gall_feat)
-    # np.save('/root/M3P/wangwq/gall_label.npy', gall_label)
-    # np.save('/root/M3P/wangwq.gall_img.npy', gall_img)
+    # np.save('/root/UNICORN/vis/gall_feat.npy', gall_feat)
+    # np.save('/root/UNICORN/vis/gall_label.npy', gall_label)
+    # np.save('/root/UNICORN/vis/gall_img.npy', gall_img)
 
     # print("Extracting Query Feature...")
     nquery = len(query_label)
@@ -51,9 +51,9 @@ def tester(args, epoch, main_net, test_mode, gall_label, gall_loader, query_labe
             ptr = ptr + batch_num
     # print("Extracting Time:\t {:.3f}".format(time.time() - start))
 
-    # np.save('/root/M3P/wangwq/query_feat.npy', query_feat)
-    # np.save('/root/M3P/wangwq/query_label.npy', query_label)
-    # np.save('/root/M3P/wangwq.query_img.npy', query_img)
+    # np.save('/root/UNICORN/vis/query_feat.npy', query_feat)
+    # np.save('/root/UNICORN/vis/query_label.npy', query_label)
+    # np.save('/root/UNICORN/vis/query_img.npy', query_img)
 
     start = time.time()
     # compute the similarity

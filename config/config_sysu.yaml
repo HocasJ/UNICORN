@@ -1,0 +1,98 @@
+#config for unspervised Cross Person re-ID (CLIP-Enhanced Contrastive Learning Network)
+
+#dataset configs
+dataset: sysu
+data_path: /root/sysu/ 
+# dataset: mmmp
+# data_path: /root/mmmp1_10/
+
+pseudo_labels_path: /root/sysu/pseudo_labels/   #/home/libin/proj/CCLNet/SYSU/pseudo_labels/  # Do not modify the file name 'pseudo_labels' in your dataset!!
+exp_setting: exp_cctv_ir_cctv_rgb
+batch_size: 4
+test_batch_size: 64
+num_instances: 16
+workers: 4
+mode: all
+img_w: 144
+img_h: 288
+
+#cluster DBCSAN configs
+eps: 0.6
+eps-gap: 0.02
+k1: 30
+k2: 6
+
+#model configs
+stride_size: [16,16]
+arch: RN50
+# 'ViT-B-16'
+#RN50
+momentum: 0.1
+change_scale: 1
+pooling_type: gem
+lr: 0.00035
+weight_decay: 0.0005
+bias_lr_factor: 2
+weight_decay_bias: 0.0005
+steps: [30,50]
+gamma: 0.1
+step_size: 20
+resume_path:
+warmup_factor: 0.01
+warmup_iters: 10
+warmup_method: 'linear'
+
+#training configs
+gpu: 1   #for which gpu to run!!!
+seed: 1
+print_freq: 100
+temp: 0.05
+save_epoch: 10
+eval_step: 5
+use_hard: False
+
+#stage1:
+stage1_maxepochs: 50
+stage1_baselr: 0.00035
+stage1_weight_decay: 0.0001
+stage1_lrmin: 0.000001
+stage1_warmup_lrinit: 0.00001
+stage1_warmup_epoch: 5
+stage1_batch_size: 128
+
+#stage2
+base_epoch: 30
+stage2_maxepochs: 100
+stage2_baselr: 0.00035
+stage2_laterlr_factor: 0.1
+stage2_weight_decay: 0.0005
+stage2_weight_decay_bias: 0.0005
+stage2_bias_lr_factor: 2
+stage2_attnpool_lr_factor: 2
+
+stage2_steps: [30, 50]
+#[30,50]
+stage2_gamma: 0.1
+stage2_warmup_factor: 0.01
+stage2_warmup_iters: 5
+stage2_warmup_method: 'linear'
+
+stage2_ims_per_batch: 128
+
+#if only test
+test_only: True
+load_stage2_model_path: '/root/part_processing/M3P-master/save/checkpoint10/test100302_stage2.pth'
+
+#log path
+logs_dir: save/logs/sysu
+logs_time: 24-7-2-singleshot-indoor-w_all-combined-low-level-only-1-constra--lr01
+logs_file: test-singleshot-indoor-w_all-stage2-lr01
+vis_log_dir: save/logs/vis_log/
+model_path: save/checkpoint_indoor-wo_all-lr01/
+
+# logs_dir: save/logs/mmmp
+# # logs_time: 24-7-1-combined-low-level-only-1-constra-testonly-uavir-cctvrgb-lr01
+# logs_time: 24-6-29-combined-low-level-only-1-constra-step5-cross-id
+# logs_file: test-cctvir-cctvrgb-stage2--step5-cross-id
+# vis_log_dir: save/logs/vis_log/
+# model_path: save/checkpoint_cctv_ir_cctv_rgb-step5-cross-id/

@@ -1,0 +1,2427 @@
+==========
+Args:{'dataset': 'sysu', 'data_path': '/root/sysu/', 'pseudo_labels_path': '/root/sysu/pseudo_labels/', 'exp_setting': 'exp_uav_ir_cctv_rgb', 'batch_size': 4, 'test_batch_size': 64, 'num_instances': 16, 'workers': 4, 'mode': 'all', 'img_w': 144, 'img_h': 288, 'eps': 0.6, 'eps-gap': 0.02, 'k1': 30, 'k2': 6, 'stride_size': [16, 16], 'arch': 'RN50', 'momentum': 0.1, 'change_scale': 1, 'pooling_type': 'gem', 'lr': 0.00035, 'weight_decay': 0.0005, 'bias_lr_factor': 2, 'weight_decay_bias': 0.0005, 'steps': [30, 50], 'gamma': 0.1, 'step_size': 20, 'resume_path': None, 'warmup_factor': 0.01, 'warmup_iters': 10, 'warmup_method': 'linear', 'gpu': 1, 'seed': 1, 'print_freq': 100, 'temp': 0.05, 'save_epoch': 10, 'eval_step': 5, 'use_hard': False, 'stage1_maxepochs': 50, 'stage1_baselr': 0.00035, 'stage1_weight_decay': 0.0001, 'stage1_lrmin': 1e-06, 'stage1_warmup_lrinit': 1e-05, 'stage1_warmup_epoch': 5, 'stage1_batch_size': 128, 'base_epoch': 30, 'stage2_maxepochs': 100, 'stage2_baselr': 0.00035, 'stage2_laterlr_factor': 0.1, 'stage2_weight_decay': 0.0005, 'stage2_weight_decay_bias': 0.0005, 'stage2_bias_lr_factor': 2, 'stage2_attnpool_lr_factor': 2, 'stage2_steps': [30, 50], 'stage2_gamma': 0.1, 'stage2_warmup_factor': 0.01, 'stage2_warmup_iters': 5, 'stage2_warmup_method': 'linear', 'stage2_ims_per_batch': 128, 'logs_dir': 'save/logs/', 'logs_time': '24-6-26-combined-low-level-only-1-constra-only-mem-text', 'logs_file': 'test10', 'vis_log_dir': 'save/logs/vis_log/', 'model_path': 'save/checkpoint10/'}
+==========
+==> Load unlabeled dataset
+Dataset sysu Statistics:
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+  ----------------------------
+Data loading time:	 2.326
+Resized position embedding: %s to %s torch.Size([50, 2048]) torch.Size([163, 2048])
+Position embedding resize to height:18 width: 9
+Resized position embedding: %s to %s torch.Size([50, 2048]) torch.Size([163, 2048])
+Position embedding resize to height:18 width: 9
+Resized position embedding: %s to %s torch.Size([50, 2048]) torch.Size([163, 2048])
+Position embedding resize to height:18 width: 9
+Resized position embedding: %s to %s torch.Size([50, 2048]) torch.Size([163, 2048])
+Position embedding resize to height:18 width: 9
+==> Resuming from checkpoint..
+----load checkpoint-----
+label smooth on, numclasses: 395
+label smooth on, numclasses: 395
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 67.056
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[1] Iteration[1/347], losses_i2t: (11.835), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(73.141), Base Lr: 7.28e-05
+Epoch[1] Iteration[101/347], losses_i2t: (11.809), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(48.080), Base Lr: 7.28e-05
+Epoch[1] Iteration[201/347], losses_i2t: (11.592), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(41.404), Base Lr: 7.28e-05
+Epoch[1] Iteration[301/347], losses_i2t: (11.427), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(38.011), Base Lr: 7.28e-05
+Test Epoch: 1
+Evaluation Time:	 1.517
+Performance[ALL]: Rank-1: 19.05% | Rank-5: 47.62% | Rank-10: 59.26%| Rank-20: 74.07%| mAP: 7.36%| mINP: 1.48%
+Best Epoch [1], Rank-1: 19.05% |  mAP: 7.36%| mINP: 1.48%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 77.346
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[2] Iteration[1/347], losses_i2t: (11.044), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(24.607), Base Lr: 1.42e-04
+Epoch[2] Iteration[101/347], losses_i2t: (11.029), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(26.837), Base Lr: 1.42e-04
+Epoch[2] Iteration[201/347], losses_i2t: (10.917), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(25.043), Base Lr: 1.42e-04
+Epoch[2] Iteration[301/347], losses_i2t: (10.816), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(23.390), Base Lr: 1.42e-04
+Test Epoch: 2
+Evaluation Time:	 1.594
+Performance[ALL]: Rank-1: 38.62% | Rank-5: 64.55% | Rank-10: 78.31%| Rank-20: 89.95%| mAP: 21.35%| mINP: 2.52%
+Best Epoch [2], Rank-1: 38.62% |  mAP: 21.35%| mINP: 2.52%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 64.074
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[3] Iteration[1/347], losses_i2t: (10.399), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(14.477), Base Lr: 2.11e-04
+Epoch[3] Iteration[101/347], losses_i2t: (10.580), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(19.826), Base Lr: 2.11e-04
+Epoch[3] Iteration[201/347], losses_i2t: (10.496), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(19.350), Base Lr: 2.11e-04
+Epoch[3] Iteration[301/347], losses_i2t: (10.426), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(18.472), Base Lr: 2.11e-04
+Test Epoch: 3
+Evaluation Time:	 1.605
+Performance[ALL]: Rank-1: 47.62% | Rank-5: 69.31% | Rank-10: 84.66%| Rank-20: 93.65%| mAP: 25.29%| mINP: 2.88%
+Best Epoch [3], Rank-1: 47.62% |  mAP: 25.29%| mINP: 2.88%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 79.862
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[4] Iteration[1/347], losses_i2t: (9.976), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(10.080), Base Lr: 2.81e-04
+Epoch[4] Iteration[101/347], losses_i2t: (10.224), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(17.932), Base Lr: 2.81e-04
+Epoch[4] Iteration[201/347], losses_i2t: (10.186), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(17.897), Base Lr: 2.81e-04
+Epoch[4] Iteration[301/347], losses_i2t: (10.093), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(16.931), Base Lr: 2.81e-04
+Test Epoch: 4
+Evaluation Time:	 1.863
+Performance[ALL]: Rank-1: 49.21% | Rank-5: 75.13% | Rank-10: 85.19%| Rank-20: 94.71%| mAP: 27.73%| mINP: 3.02%
+Best Epoch [4], Rank-1: 49.21% |  mAP: 27.73%| mINP: 3.02%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 79.286
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[5] Iteration[1/347], losses_i2t: (10.015), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(9.991), Base Lr: 3.50e-04
+Epoch[5] Iteration[101/347], losses_i2t: (10.036), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(15.460), Base Lr: 3.50e-04
+Epoch[5] Iteration[201/347], losses_i2t: (9.950), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(15.402), Base Lr: 3.50e-04
+Epoch[5] Iteration[301/347], losses_i2t: (9.959), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(15.757), Base Lr: 3.50e-04
+Test Epoch: 5
+Evaluation Time:	 1.848
+Performance[ALL]: Rank-1: 51.32% | Rank-5: 75.13% | Rank-10: 84.13%| Rank-20: 94.18%| mAP: 27.50%| mINP: 3.06%
+Best Epoch [5], Rank-1: 51.32% |  mAP: 27.50%| mINP: 3.06%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 76.573
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[6] Iteration[1/347], losses_i2t: (9.650), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(10.595), Base Lr: 3.50e-04
+Epoch[6] Iteration[101/347], losses_i2t: (9.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(12.326), Base Lr: 3.50e-04
+Epoch[6] Iteration[201/347], losses_i2t: (9.562), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(11.287), Base Lr: 3.50e-04
+Epoch[6] Iteration[301/347], losses_i2t: (9.492), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(10.689), Base Lr: 3.50e-04
+Test Epoch: 6
+Evaluation Time:	 1.599
+Performance[ALL]: Rank-1: 58.20% | Rank-5: 82.54% | Rank-10: 91.53%| Rank-20: 96.30%| mAP: 36.22%| mINP: 4.22%
+Best Epoch [6], Rank-1: 58.20% |  mAP: 36.22%| mINP: 4.22%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 80.581
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[7] Iteration[1/347], losses_i2t: (9.227), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.178), Base Lr: 3.50e-04
+Epoch[7] Iteration[101/347], losses_i2t: (9.302), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.754), Base Lr: 3.50e-04
+Epoch[7] Iteration[201/347], losses_i2t: (9.333), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.938), Base Lr: 3.50e-04
+Epoch[7] Iteration[301/347], losses_i2t: (9.307), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.768), Base Lr: 3.50e-04
+Test Epoch: 7
+Evaluation Time:	 1.620
+Performance[ALL]: Rank-1: 62.43% | Rank-5: 81.48% | Rank-10: 89.42%| Rank-20: 96.30%| mAP: 39.02%| mINP: 5.19%
+Best Epoch [7], Rank-1: 62.43% |  mAP: 39.02%| mINP: 5.19%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 82.945
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[8] Iteration[1/347], losses_i2t: (9.175), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.595), Base Lr: 3.50e-04
+Epoch[8] Iteration[101/347], losses_i2t: (9.041), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.700), Base Lr: 3.50e-04
+Epoch[8] Iteration[201/347], losses_i2t: (9.105), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.696), Base Lr: 3.50e-04
+Epoch[8] Iteration[301/347], losses_i2t: (9.086), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.543), Base Lr: 3.50e-04
+Test Epoch: 8
+Evaluation Time:	 1.612
+Performance[ALL]: Rank-1: 59.79% | Rank-5: 83.60% | Rank-10: 91.53%| Rank-20: 97.35%| mAP: 39.03%| mINP: 4.49%
+Best Epoch [7], Rank-1: 62.43% |  mAP: 39.02%| mINP: 5.19%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 85.042
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[9] Iteration[1/347], losses_i2t: (8.796), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.788), Base Lr: 3.50e-04
+Epoch[9] Iteration[101/347], losses_i2t: (9.051), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.967), Base Lr: 3.50e-04
+Epoch[9] Iteration[201/347], losses_i2t: (9.081), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.083), Base Lr: 3.50e-04
+Epoch[9] Iteration[301/347], losses_i2t: (9.108), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.553), Base Lr: 3.50e-04
+Test Epoch: 9
+Evaluation Time:	 1.615
+Performance[ALL]: Rank-1: 57.14% | Rank-5: 75.66% | Rank-10: 87.30%| Rank-20: 93.12%| mAP: 35.42%| mINP: 5.22%
+Best Epoch [7], Rank-1: 62.43% |  mAP: 39.02%| mINP: 5.19%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 85.991
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[10] Iteration[1/347], losses_i2t: (9.202), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(9.143), Base Lr: 3.50e-04
+Epoch[10] Iteration[101/347], losses_i2t: (9.216), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(8.416), Base Lr: 3.50e-04
+Epoch[10] Iteration[201/347], losses_i2t: (9.089), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(8.322), Base Lr: 3.50e-04
+Epoch[10] Iteration[301/347], losses_i2t: (9.088), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(8.457), Base Lr: 3.50e-04
+Test Epoch: 10
+Evaluation Time:	 1.605
+Performance[ALL]: Rank-1: 57.14% | Rank-5: 83.07% | Rank-10: 93.12%| Rank-20: 96.30%| mAP: 36.91%| mINP: 5.07%
+Best Epoch [7], Rank-1: 62.43% |  mAP: 39.02%| mINP: 5.19%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 59.758
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[11] Iteration[1/347], losses_i2t: (9.563), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.371), Base Lr: 3.50e-04
+Epoch[11] Iteration[101/347], losses_i2t: (8.945), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.522), Base Lr: 3.50e-04
+Epoch[11] Iteration[201/347], losses_i2t: (8.892), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.344), Base Lr: 3.50e-04
+Epoch[11] Iteration[301/347], losses_i2t: (8.875), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.962), Base Lr: 3.50e-04
+Test Epoch: 11
+Evaluation Time:	 1.604
+Performance[ALL]: Rank-1: 62.96% | Rank-5: 90.48% | Rank-10: 94.18%| Rank-20: 97.35%| mAP: 40.80%| mINP: 5.48%
+Best Epoch [11], Rank-1: 62.96% |  mAP: 40.80%| mINP: 5.48%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 81.714
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[12] Iteration[1/347], losses_i2t: (9.109), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.758), Base Lr: 3.50e-04
+Epoch[12] Iteration[101/347], losses_i2t: (8.646), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.952), Base Lr: 3.50e-04
+Epoch[12] Iteration[201/347], losses_i2t: (8.634), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.786), Base Lr: 3.50e-04
+Epoch[12] Iteration[301/347], losses_i2t: (8.639), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.770), Base Lr: 3.50e-04
+Test Epoch: 12
+Evaluation Time:	 1.607
+Performance[ALL]: Rank-1: 64.02% | Rank-5: 91.01% | Rank-10: 96.30%| Rank-20: 97.88%| mAP: 43.55%| mINP: 7.26%
+Best Epoch [12], Rank-1: 64.02% |  mAP: 43.55%| mINP: 7.26%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 97.886
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[13] Iteration[1/347], losses_i2t: (8.199), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.973), Base Lr: 3.50e-04
+Epoch[13] Iteration[101/347], losses_i2t: (8.553), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.919), Base Lr: 3.50e-04
+Epoch[13] Iteration[201/347], losses_i2t: (8.620), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.978), Base Lr: 3.50e-04
+Epoch[13] Iteration[301/347], losses_i2t: (8.666), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.219), Base Lr: 3.50e-04
+Test Epoch: 13
+Evaluation Time:	 1.851
+Performance[ALL]: Rank-1: 49.21% | Rank-5: 76.72% | Rank-10: 87.30%| Rank-20: 94.71%| mAP: 28.97%| mINP: 3.53%
+Best Epoch [12], Rank-1: 64.02% |  mAP: 43.55%| mINP: 7.26%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 68.990
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[14] Iteration[1/347], losses_i2t: (9.563), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(10.543), Base Lr: 3.50e-04
+Epoch[14] Iteration[101/347], losses_i2t: (8.884), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(12.111), Base Lr: 3.50e-04
+Epoch[14] Iteration[201/347], losses_i2t: (9.184), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(16.348), Base Lr: 3.50e-04
+Epoch[14] Iteration[301/347], losses_i2t: (9.126), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(15.015), Base Lr: 3.50e-04
+Test Epoch: 14
+Evaluation Time:	 1.615
+Performance[ALL]: Rank-1: 56.61% | Rank-5: 82.54% | Rank-10: 92.06%| Rank-20: 97.35%| mAP: 38.57%| mINP: 5.68%
+Best Epoch [12], Rank-1: 64.02% |  mAP: 43.55%| mINP: 7.26%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 74.379
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[15] Iteration[1/347], losses_i2t: (8.677), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.564), Base Lr: 3.50e-04
+Epoch[15] Iteration[101/347], losses_i2t: (8.720), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.940), Base Lr: 3.50e-04
+Epoch[15] Iteration[201/347], losses_i2t: (8.604), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.144), Base Lr: 3.50e-04
+Epoch[15] Iteration[301/347], losses_i2t: (8.584), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.599), Base Lr: 3.50e-04
+Test Epoch: 15
+Evaluation Time:	 1.611
+Performance[ALL]: Rank-1: 60.32% | Rank-5: 88.89% | Rank-10: 95.24%| Rank-20: 98.94%| mAP: 43.78%| mINP: 6.47%
+Best Epoch [12], Rank-1: 64.02% |  mAP: 43.55%| mINP: 7.26%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 82.591
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[16] Iteration[1/347], losses_i2t: (8.502), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.202), Base Lr: 3.50e-04
+Epoch[16] Iteration[101/347], losses_i2t: (8.502), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.746), Base Lr: 3.50e-04
+Epoch[16] Iteration[201/347], losses_i2t: (8.428), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.578), Base Lr: 3.50e-04
+Epoch[16] Iteration[301/347], losses_i2t: (8.415), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.438), Base Lr: 3.50e-04
+Test Epoch: 16
+Evaluation Time:	 1.885
+Performance[ALL]: Rank-1: 68.25% | Rank-5: 88.89% | Rank-10: 93.65%| Rank-20: 95.77%| mAP: 48.09%| mINP: 6.92%
+Best Epoch [16], Rank-1: 68.25% |  mAP: 48.09%| mINP: 6.92%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 58.984
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[17] Iteration[1/347], losses_i2t: (8.020), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.393), Base Lr: 3.50e-04
+Epoch[17] Iteration[101/347], losses_i2t: (8.301), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.000), Base Lr: 3.50e-04
+Epoch[17] Iteration[201/347], losses_i2t: (8.411), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.965), Base Lr: 3.50e-04
+Epoch[17] Iteration[301/347], losses_i2t: (8.386), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.997), Base Lr: 3.50e-04
+Test Epoch: 17
+Evaluation Time:	 1.627
+Performance[ALL]: Rank-1: 68.25% | Rank-5: 90.48% | Rank-10: 95.24%| Rank-20: 98.41%| mAP: 47.92%| mINP: 8.12%
+Best Epoch [16], Rank-1: 68.25% |  mAP: 48.09%| mINP: 6.92%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 60.071
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[18] Iteration[1/347], losses_i2t: (8.405), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.054), Base Lr: 3.50e-04
+Epoch[18] Iteration[101/347], losses_i2t: (8.406), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.024), Base Lr: 3.50e-04
+Epoch[18] Iteration[201/347], losses_i2t: (8.320), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.054), Base Lr: 3.50e-04
+Epoch[18] Iteration[301/347], losses_i2t: (8.301), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.148), Base Lr: 3.50e-04
+Test Epoch: 18
+Evaluation Time:	 1.605
+Performance[ALL]: Rank-1: 61.90% | Rank-5: 86.24% | Rank-10: 94.71%| Rank-20: 97.35%| mAP: 44.05%| mINP: 6.95%
+Best Epoch [16], Rank-1: 68.25% |  mAP: 48.09%| mINP: 6.92%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 90.639
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[19] Iteration[1/347], losses_i2t: (7.777), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.085), Base Lr: 3.50e-04
+Epoch[19] Iteration[101/347], losses_i2t: (8.205), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.292), Base Lr: 3.50e-04
+Epoch[19] Iteration[201/347], losses_i2t: (8.446), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(8.544), Base Lr: 3.50e-04
+Epoch[19] Iteration[301/347], losses_i2t: (8.503), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(10.011), Base Lr: 3.50e-04
+Test Epoch: 19
+Evaluation Time:	 1.704
+Performance[ALL]: Rank-1: 54.50% | Rank-5: 77.25% | Rank-10: 88.36%| Rank-20: 94.71%| mAP: 34.05%| mINP: 5.21%
+Best Epoch [16], Rank-1: 68.25% |  mAP: 48.09%| mINP: 6.92%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 78.314
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[20] Iteration[1/347], losses_i2t: (7.491), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.796), Base Lr: 3.50e-04
+Epoch[20] Iteration[101/347], losses_i2t: (8.247), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(7.299), Base Lr: 3.50e-04
+Epoch[20] Iteration[201/347], losses_i2t: (8.100), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(6.174), Base Lr: 3.50e-04
+Epoch[20] Iteration[301/347], losses_i2t: (8.094), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.508), Base Lr: 3.50e-04
+Test Epoch: 20
+Evaluation Time:	 1.620
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 87.83% | Rank-10: 93.65%| Rank-20: 97.88%| mAP: 47.75%| mINP: 8.33%
+Best Epoch [20], Rank-1: 69.84% |  mAP: 47.75%| mINP: 8.33%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 71.675
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[21] Iteration[1/347], losses_i2t: (7.606), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.866), Base Lr: 3.50e-04
+Epoch[21] Iteration[101/347], losses_i2t: (7.930), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.969), Base Lr: 3.50e-04
+Epoch[21] Iteration[201/347], losses_i2t: (8.009), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.895), Base Lr: 3.50e-04
+Epoch[21] Iteration[301/347], losses_i2t: (8.071), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.826), Base Lr: 3.50e-04
+Test Epoch: 21
+Evaluation Time:	 1.605
+Performance[ALL]: Rank-1: 66.14% | Rank-5: 87.30% | Rank-10: 95.77%| Rank-20: 97.88%| mAP: 45.19%| mINP: 7.31%
+Best Epoch [20], Rank-1: 69.84% |  mAP: 47.75%| mINP: 8.33%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 44.094
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[22] Iteration[1/347], losses_i2t: (8.043), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.323), Base Lr: 3.50e-04
+Epoch[22] Iteration[101/347], losses_i2t: (7.917), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.366), Base Lr: 3.50e-04
+Epoch[22] Iteration[201/347], losses_i2t: (7.997), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.390), Base Lr: 3.50e-04
+Epoch[22] Iteration[301/347], losses_i2t: (7.954), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.344), Base Lr: 3.50e-04
+Test Epoch: 22
+Evaluation Time:	 1.803
+Performance[ALL]: Rank-1: 66.14% | Rank-5: 90.48% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 47.00%| mINP: 8.10%
+Best Epoch [20], Rank-1: 69.84% |  mAP: 47.75%| mINP: 8.33%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 76.880
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[23] Iteration[1/347], losses_i2t: (8.276), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.351), Base Lr: 3.50e-04
+Epoch[23] Iteration[101/347], losses_i2t: (8.138), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.474), Base Lr: 3.50e-04
+Epoch[23] Iteration[201/347], losses_i2t: (8.079), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.457), Base Lr: 3.50e-04
+Epoch[23] Iteration[301/347], losses_i2t: (8.077), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.461), Base Lr: 3.50e-04
+Test Epoch: 23
+Evaluation Time:	 1.612
+Performance[ALL]: Rank-1: 67.20% | Rank-5: 89.95% | Rank-10: 95.24%| Rank-20: 98.94%| mAP: 44.68%| mINP: 6.70%
+Best Epoch [20], Rank-1: 69.84% |  mAP: 47.75%| mINP: 8.33%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 76.756
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[24] Iteration[1/347], losses_i2t: (8.733), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(5.486), Base Lr: 3.50e-04
+Epoch[24] Iteration[101/347], losses_i2t: (8.104), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.085), Base Lr: 3.50e-04
+Epoch[24] Iteration[201/347], losses_i2t: (8.031), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.591), Base Lr: 3.50e-04
+Epoch[24] Iteration[301/347], losses_i2t: (7.966), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(4.100), Base Lr: 3.50e-04
+Test Epoch: 24
+Evaluation Time:	 1.860
+Performance[ALL]: Rank-1: 50.79% | Rank-5: 80.42% | Rank-10: 86.77%| Rank-20: 95.24%| mAP: 35.49%| mINP: 5.08%
+Best Epoch [20], Rank-1: 69.84% |  mAP: 47.75%| mINP: 8.33%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 86.419
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[25] Iteration[1/347], losses_i2t: (6.825), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(8.522), Base Lr: 3.50e-04
+Epoch[25] Iteration[101/347], losses_i2t: (8.263), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(13.498), Base Lr: 3.50e-04
+Epoch[25] Iteration[201/347], losses_i2t: (8.071), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(11.439), Base Lr: 3.50e-04
+Epoch[25] Iteration[301/347], losses_i2t: (7.955), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(9.635), Base Lr: 3.50e-04
+Test Epoch: 25
+Evaluation Time:	 1.609
+Performance[ALL]: Rank-1: 70.90% | Rank-5: 88.36% | Rank-10: 94.18%| Rank-20: 97.35%| mAP: 44.64%| mINP: 6.66%
+Best Epoch [25], Rank-1: 70.90% |  mAP: 44.64%| mINP: 6.66%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 43.531
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[26] Iteration[1/347], losses_i2t: (8.014), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.916), Base Lr: 3.50e-04
+Epoch[26] Iteration[101/347], losses_i2t: (7.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.112), Base Lr: 3.50e-04
+Epoch[26] Iteration[201/347], losses_i2t: (7.743), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(3.004), Base Lr: 3.50e-04
+Epoch[26] Iteration[301/347], losses_i2t: (7.784), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.857), Base Lr: 3.50e-04
+Test Epoch: 26
+Evaluation Time:	 1.610
+Performance[ALL]: Rank-1: 69.31% | Rank-5: 88.89% | Rank-10: 95.77%| Rank-20: 97.88%| mAP: 49.66%| mINP: 9.56%
+Best Epoch [25], Rank-1: 70.90% |  mAP: 44.64%| mINP: 6.66%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 52.988
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[27] Iteration[1/347], losses_i2t: (7.305), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.846), Base Lr: 3.50e-04
+Epoch[27] Iteration[101/347], losses_i2t: (7.802), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.223), Base Lr: 3.50e-04
+Epoch[27] Iteration[201/347], losses_i2t: (7.790), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.056), Base Lr: 3.50e-04
+Epoch[27] Iteration[301/347], losses_i2t: (7.882), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.015), Base Lr: 3.50e-04
+Test Epoch: 27
+Evaluation Time:	 1.611
+Performance[ALL]: Rank-1: 67.20% | Rank-5: 89.95% | Rank-10: 93.65%| Rank-20: 97.88%| mAP: 45.99%| mINP: 7.59%
+Best Epoch [25], Rank-1: 70.90% |  mAP: 44.64%| mINP: 6.66%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 51.704
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[28] Iteration[1/347], losses_i2t: (7.989), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.973), Base Lr: 3.50e-04
+Epoch[28] Iteration[101/347], losses_i2t: (7.643), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.807), Base Lr: 3.50e-04
+Epoch[28] Iteration[201/347], losses_i2t: (7.699), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.894), Base Lr: 3.50e-04
+Epoch[28] Iteration[301/347], losses_i2t: (7.738), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.865), Base Lr: 3.50e-04
+Test Epoch: 28
+Evaluation Time:	 1.627
+Performance[ALL]: Rank-1: 65.61% | Rank-5: 88.36% | Rank-10: 94.18%| Rank-20: 97.88%| mAP: 45.64%| mINP: 7.10%
+Best Epoch [25], Rank-1: 70.90% |  mAP: 44.64%| mINP: 6.66%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 63.357
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[29] Iteration[1/347], losses_i2t: (7.432), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.870), Base Lr: 3.50e-04
+Epoch[29] Iteration[101/347], losses_i2t: (7.903), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.028), Base Lr: 3.50e-04
+Epoch[29] Iteration[201/347], losses_i2t: (7.787), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.059), Base Lr: 3.50e-04
+Epoch[29] Iteration[301/347], losses_i2t: (7.696), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(2.036), Base Lr: 3.50e-04
+Test Epoch: 29
+Evaluation Time:	 1.603
+Performance[ALL]: Rank-1: 64.02% | Rank-5: 90.48% | Rank-10: 94.18%| Rank-20: 96.83%| mAP: 46.13%| mINP: 8.11%
+Best Epoch [25], Rank-1: 70.90% |  mAP: 44.64%| mINP: 6.66%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 58.432
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[30] Iteration[1/347], losses_i2t: (7.946), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.550), Base Lr: 3.50e-05
+Epoch[30] Iteration[101/347], losses_i2t: (7.699), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.636), Base Lr: 3.50e-05
+Epoch[30] Iteration[201/347], losses_i2t: (7.695), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.544), Base Lr: 3.50e-05
+Epoch[30] Iteration[301/347], losses_i2t: (7.704), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.467), Base Lr: 3.50e-05
+Test Epoch: 30
+Evaluation Time:	 1.604
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 91.01% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 52.20%| mINP: 9.99%
+Best Epoch [30], Rank-1: 73.02% |  mAP: 52.20%| mINP: 9.99%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 82.981
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[31] Iteration[1/347], losses_i2t: (7.745), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.174), Base Lr: 3.50e-05
+Epoch[31] Iteration[101/347], losses_i2t: (7.720), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.091), Base Lr: 3.50e-05
+Epoch[31] Iteration[201/347], losses_i2t: (7.743), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.072), Base Lr: 3.50e-05
+Epoch[31] Iteration[301/347], losses_i2t: (7.764), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.056), Base Lr: 3.50e-05
+Test Epoch: 31
+Evaluation Time:	 1.604
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 93.12% | Rank-10: 96.30%| Rank-20: 98.41%| mAP: 52.52%| mINP: 10.57%
+Best Epoch [30], Rank-1: 73.02% |  mAP: 52.20%| mINP: 9.99%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 63.514
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[32] Iteration[1/347], losses_i2t: (8.147), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.305), Base Lr: 3.50e-05
+Epoch[32] Iteration[101/347], losses_i2t: (7.890), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.026), Base Lr: 3.50e-05
+Epoch[32] Iteration[201/347], losses_i2t: (7.873), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.994), Base Lr: 3.50e-05
+Epoch[32] Iteration[301/347], losses_i2t: (7.868), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.991), Base Lr: 3.50e-05
+Test Epoch: 32
+Evaluation Time:	 1.608
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 52.73%| mINP: 10.92%
+Best Epoch [30], Rank-1: 73.02% |  mAP: 52.20%| mINP: 9.99%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 17.647
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[33] Iteration[1/347], losses_i2t: (7.985), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.877), Base Lr: 3.50e-05
+Epoch[33] Iteration[101/347], losses_i2t: (7.858), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.854), Base Lr: 3.50e-05
+Epoch[33] Iteration[201/347], losses_i2t: (7.865), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.881), Base Lr: 3.50e-05
+Epoch[33] Iteration[301/347], losses_i2t: (7.877), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.869), Base Lr: 3.50e-05
+Test Epoch: 33
+Evaluation Time:	 1.596
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 97.88%| mAP: 52.76%| mINP: 11.10%
+Best Epoch [30], Rank-1: 73.02% |  mAP: 52.20%| mINP: 9.99%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 55.644
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[34] Iteration[1/347], losses_i2t: (8.127), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(1.656), Base Lr: 3.50e-05
+Epoch[34] Iteration[101/347], losses_i2t: (7.956), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.946), Base Lr: 3.50e-05
+Epoch[34] Iteration[201/347], losses_i2t: (7.935), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.897), Base Lr: 3.50e-05
+Epoch[34] Iteration[301/347], losses_i2t: (7.926), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.879), Base Lr: 3.50e-05
+Test Epoch: 34
+Evaluation Time:	 1.606
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 91.01% | Rank-10: 97.35%| Rank-20: 98.41%| mAP: 51.57%| mINP: 10.68%
+Best Epoch [34], Rank-1: 73.54% |  mAP: 51.57%| mINP: 10.68%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 94.806
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[35] Iteration[1/347], losses_i2t: (8.095), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.897), Base Lr: 3.50e-05
+Epoch[35] Iteration[101/347], losses_i2t: (8.005), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.852), Base Lr: 3.50e-05
+Epoch[35] Iteration[201/347], losses_i2t: (7.941), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.877), Base Lr: 3.50e-05
+Epoch[35] Iteration[301/347], losses_i2t: (7.901), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.861), Base Lr: 3.50e-05
+Test Epoch: 35
+Evaluation Time:	 1.607
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 92.59% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 52.25%| mINP: 10.76%
+Best Epoch [34], Rank-1: 73.54% |  mAP: 51.57%| mINP: 10.68%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 67.153
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[36] Iteration[1/347], losses_i2t: (8.049), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.746), Base Lr: 3.50e-05
+Epoch[36] Iteration[101/347], losses_i2t: (7.977), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.813), Base Lr: 3.50e-05
+Epoch[36] Iteration[201/347], losses_i2t: (7.967), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.788), Base Lr: 3.50e-05
+Epoch[36] Iteration[301/347], losses_i2t: (7.946), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.787), Base Lr: 3.50e-05
+Test Epoch: 36
+Evaluation Time:	 1.602
+Performance[ALL]: Rank-1: 74.07% | Rank-5: 91.53% | Rank-10: 96.30%| Rank-20: 97.88%| mAP: 51.80%| mINP: 10.57%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 55.117
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[37] Iteration[1/347], losses_i2t: (7.834), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.649), Base Lr: 3.50e-05
+Epoch[37] Iteration[101/347], losses_i2t: (7.813), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.792), Base Lr: 3.50e-05
+Epoch[37] Iteration[201/347], losses_i2t: (7.805), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.774), Base Lr: 3.50e-05
+Epoch[37] Iteration[301/347], losses_i2t: (7.802), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.781), Base Lr: 3.50e-05
+Test Epoch: 37
+Evaluation Time:	 1.839
+Performance[ALL]: Rank-1: 74.07% | Rank-5: 92.59% | Rank-10: 95.77%| Rank-20: 98.41%| mAP: 52.16%| mINP: 10.42%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 68.984
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[38] Iteration[1/347], losses_i2t: (7.805), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.759), Base Lr: 3.50e-05
+Epoch[38] Iteration[101/347], losses_i2t: (7.793), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.721), Base Lr: 3.50e-05
+Epoch[38] Iteration[201/347], losses_i2t: (7.786), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.719), Base Lr: 3.50e-05
+Epoch[38] Iteration[301/347], losses_i2t: (7.745), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.715), Base Lr: 3.50e-05
+Test Epoch: 38
+Evaluation Time:	 1.647
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 98.41%| mAP: 51.80%| mINP: 11.24%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 80.522
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[39] Iteration[1/347], losses_i2t: (7.821), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.598), Base Lr: 3.50e-05
+Epoch[39] Iteration[101/347], losses_i2t: (7.758), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.665), Base Lr: 3.50e-05
+Epoch[39] Iteration[201/347], losses_i2t: (7.792), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.691), Base Lr: 3.50e-05
+Epoch[39] Iteration[301/347], losses_i2t: (7.818), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.709), Base Lr: 3.50e-05
+Test Epoch: 39
+Evaluation Time:	 1.715
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 98.41%| mAP: 52.01%| mINP: 10.39%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 74.287
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[40] Iteration[1/347], losses_i2t: (7.933), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.684), Base Lr: 3.50e-05
+Epoch[40] Iteration[101/347], losses_i2t: (7.758), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.709), Base Lr: 3.50e-05
+Epoch[40] Iteration[201/347], losses_i2t: (7.733), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.686), Base Lr: 3.50e-05
+Epoch[40] Iteration[301/347], losses_i2t: (7.717), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.681), Base Lr: 3.50e-05
+Test Epoch: 40
+Evaluation Time:	 1.612
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 93.12% | Rank-10: 96.30%| Rank-20: 98.41%| mAP: 51.69%| mINP: 10.90%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 76.464
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[41] Iteration[1/347], losses_i2t: (7.360), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.880), Base Lr: 3.50e-05
+Epoch[41] Iteration[101/347], losses_i2t: (7.660), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.684), Base Lr: 3.50e-05
+Epoch[41] Iteration[201/347], losses_i2t: (7.757), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.678), Base Lr: 3.50e-05
+Epoch[41] Iteration[301/347], losses_i2t: (7.743), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.678), Base Lr: 3.50e-05
+Test Epoch: 41
+Evaluation Time:	 1.606
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 94.18% | Rank-10: 96.30%| Rank-20: 98.41%| mAP: 51.08%| mINP: 10.14%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 44.341
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[42] Iteration[1/347], losses_i2t: (7.811), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.772), Base Lr: 3.50e-05
+Epoch[42] Iteration[101/347], losses_i2t: (7.863), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.637), Base Lr: 3.50e-05
+Epoch[42] Iteration[201/347], losses_i2t: (7.920), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.682), Base Lr: 3.50e-05
+Epoch[42] Iteration[301/347], losses_i2t: (7.945), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.675), Base Lr: 3.50e-05
+Test Epoch: 42
+Evaluation Time:	 1.841
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 92.06% | Rank-10: 96.83%| Rank-20: 98.41%| mAP: 50.46%| mINP: 10.79%
+Best Epoch [36], Rank-1: 74.07% |  mAP: 51.80%| mINP: 10.57%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 84.498
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[43] Iteration[1/347], losses_i2t: (7.849), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.381), Base Lr: 3.50e-05
+Epoch[43] Iteration[101/347], losses_i2t: (7.905), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.619), Base Lr: 3.50e-05
+Epoch[43] Iteration[201/347], losses_i2t: (7.862), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.614), Base Lr: 3.50e-05
+Epoch[43] Iteration[301/347], losses_i2t: (7.848), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.622), Base Lr: 3.50e-05
+Test Epoch: 43
+Evaluation Time:	 1.609
+Performance[ALL]: Rank-1: 75.66% | Rank-5: 94.18% | Rank-10: 97.88%| Rank-20: 98.94%| mAP: 51.66%| mINP: 11.03%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 50.166
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[44] Iteration[1/347], losses_i2t: (7.814), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.422), Base Lr: 3.50e-05
+Epoch[44] Iteration[101/347], losses_i2t: (7.908), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.565), Base Lr: 3.50e-05
+Epoch[44] Iteration[201/347], losses_i2t: (7.879), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.556), Base Lr: 3.50e-05
+Epoch[44] Iteration[301/347], losses_i2t: (7.894), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.557), Base Lr: 3.50e-05
+Test Epoch: 44
+Evaluation Time:	 1.604
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 93.65% | Rank-10: 98.41%| Rank-20: 98.94%| mAP: 51.50%| mINP: 10.01%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 38.678
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[45] Iteration[1/347], losses_i2t: (7.625), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.838), Base Lr: 3.50e-05
+Epoch[45] Iteration[101/347], losses_i2t: (7.718), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.631), Base Lr: 3.50e-05
+Epoch[45] Iteration[201/347], losses_i2t: (7.699), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.605), Base Lr: 3.50e-05
+Epoch[45] Iteration[301/347], losses_i2t: (7.703), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.596), Base Lr: 3.50e-05
+Test Epoch: 45
+Evaluation Time:	 1.625
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 93.12% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 50.12%| mINP: 9.82%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 51.740
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[46] Iteration[1/347], losses_i2t: (7.673), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.390), Base Lr: 3.50e-05
+Epoch[46] Iteration[101/347], losses_i2t: (7.766), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.557), Base Lr: 3.50e-05
+Epoch[46] Iteration[201/347], losses_i2t: (7.761), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.553), Base Lr: 3.50e-05
+Epoch[46] Iteration[301/347], losses_i2t: (7.758), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.557), Base Lr: 3.50e-05
+Test Epoch: 46
+Evaluation Time:	 2.401
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 94.18% | Rank-10: 97.35%| Rank-20: 98.94%| mAP: 51.01%| mINP: 11.01%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 44.815
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[47] Iteration[1/347], losses_i2t: (7.280), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.473), Base Lr: 3.50e-05
+Epoch[47] Iteration[101/347], losses_i2t: (7.712), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.585), Base Lr: 3.50e-05
+Epoch[47] Iteration[201/347], losses_i2t: (7.686), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.568), Base Lr: 3.50e-05
+Epoch[47] Iteration[301/347], losses_i2t: (7.656), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.563), Base Lr: 3.50e-05
+Test Epoch: 47
+Evaluation Time:	 1.610
+Performance[ALL]: Rank-1: 71.43% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 98.41%| mAP: 50.32%| mINP: 10.54%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 56.748
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[48] Iteration[1/347], losses_i2t: (7.597), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.435), Base Lr: 3.50e-05
+Epoch[48] Iteration[101/347], losses_i2t: (7.747), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.522), Base Lr: 3.50e-05
+Epoch[48] Iteration[201/347], losses_i2t: (7.752), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.534), Base Lr: 3.50e-05
+Epoch[48] Iteration[301/347], losses_i2t: (7.800), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.538), Base Lr: 3.50e-05
+Test Epoch: 48
+Evaluation Time:	 1.663
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 93.12% | Rank-10: 97.35%| Rank-20: 98.41%| mAP: 51.42%| mINP: 10.32%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 74.046
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[49] Iteration[1/347], losses_i2t: (7.317), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.508), Base Lr: 3.50e-05
+Epoch[49] Iteration[101/347], losses_i2t: (7.768), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.527), Base Lr: 3.50e-05
+Epoch[49] Iteration[201/347], losses_i2t: (7.913), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.523), Base Lr: 3.50e-05
+Epoch[49] Iteration[301/347], losses_i2t: (7.898), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.533), Base Lr: 3.50e-05
+Test Epoch: 49
+Evaluation Time:	 1.620
+Performance[ALL]: Rank-1: 73.54% | Rank-5: 92.59% | Rank-10: 98.41%| Rank-20: 99.47%| mAP: 50.65%| mINP: 10.41%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 52.061
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[50] Iteration[1/347], losses_i2t: (7.427), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.535), Base Lr: 3.50e-06
+Epoch[50] Iteration[101/347], losses_i2t: (7.685), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.476), Base Lr: 3.50e-06
+Epoch[50] Iteration[201/347], losses_i2t: (7.695), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.472), Base Lr: 3.50e-06
+Epoch[50] Iteration[301/347], losses_i2t: (7.703), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.483), Base Lr: 3.50e-06
+Test Epoch: 50
+Evaluation Time:	 1.599
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 93.12% | Rank-10: 97.88%| Rank-20: 99.47%| mAP: 51.39%| mINP: 10.75%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 77.969
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[51] Iteration[1/347], losses_i2t: (7.908), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.353), Base Lr: 3.50e-06
+Epoch[51] Iteration[101/347], losses_i2t: (7.771), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.480), Base Lr: 3.50e-06
+Epoch[51] Iteration[201/347], losses_i2t: (7.780), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.478), Base Lr: 3.50e-06
+Epoch[51] Iteration[301/347], losses_i2t: (7.789), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.480), Base Lr: 3.50e-06
+Test Epoch: 51
+Evaluation Time:	 1.847
+Performance[ALL]: Rank-1: 75.13% | Rank-5: 91.01% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 51.43%| mINP: 10.69%
+Best Epoch [43], Rank-1: 75.66% |  mAP: 51.66%| mINP: 11.03%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 60.466
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[52] Iteration[1/347], losses_i2t: (7.874), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.506), Base Lr: 3.50e-06
+Epoch[52] Iteration[101/347], losses_i2t: (7.788), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.474), Base Lr: 3.50e-06
+Epoch[52] Iteration[201/347], losses_i2t: (7.779), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.453), Base Lr: 3.50e-06
+Epoch[52] Iteration[301/347], losses_i2t: (7.780), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.453), Base Lr: 3.50e-06
+Test Epoch: 52
+Evaluation Time:	 1.612
+Performance[ALL]: Rank-1: 76.19% | Rank-5: 92.06% | Rank-10: 96.30%| Rank-20: 99.47%| mAP: 51.63%| mINP: 10.67%
+Best Epoch [52], Rank-1: 76.19% |  mAP: 51.63%| mINP: 10.67%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 56.665
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[53] Iteration[1/347], losses_i2t: (7.599), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.441), Base Lr: 3.50e-06
+Epoch[53] Iteration[101/347], losses_i2t: (7.848), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.443), Base Lr: 3.50e-06
+Epoch[53] Iteration[201/347], losses_i2t: (7.845), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.444), Base Lr: 3.50e-06
+Epoch[53] Iteration[301/347], losses_i2t: (7.842), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.438), Base Lr: 3.50e-06
+Test Epoch: 53
+Evaluation Time:	 1.623
+Performance[ALL]: Rank-1: 76.72% | Rank-5: 93.65% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 51.46%| mINP: 10.55%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 40.376
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[54] Iteration[1/347], losses_i2t: (8.056), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.345), Base Lr: 3.50e-06
+Epoch[54] Iteration[101/347], losses_i2t: (7.822), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.427), Base Lr: 3.50e-06
+Epoch[54] Iteration[201/347], losses_i2t: (7.855), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.440), Base Lr: 3.50e-06
+Epoch[54] Iteration[301/347], losses_i2t: (7.860), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.438), Base Lr: 3.50e-06
+Test Epoch: 54
+Evaluation Time:	 1.615
+Performance[ALL]: Rank-1: 75.13% | Rank-5: 93.12% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 50.69%| mINP: 10.10%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 45.950
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[55] Iteration[1/347], losses_i2t: (7.847), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.347), Base Lr: 3.50e-06
+Epoch[55] Iteration[101/347], losses_i2t: (7.859), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.453), Base Lr: 3.50e-06
+Epoch[55] Iteration[201/347], losses_i2t: (7.853), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.437), Base Lr: 3.50e-06
+Epoch[55] Iteration[301/347], losses_i2t: (7.868), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.431), Base Lr: 3.50e-06
+Test Epoch: 55
+Evaluation Time:	 1.623
+Performance[ALL]: Rank-1: 74.60% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 51.00%| mINP: 10.46%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 42.757
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[56] Iteration[1/347], losses_i2t: (7.995), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.380), Base Lr: 3.50e-06
+Epoch[56] Iteration[101/347], losses_i2t: (7.836), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.418), Base Lr: 3.50e-06
+Epoch[56] Iteration[201/347], losses_i2t: (7.854), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.436), Base Lr: 3.50e-06
+Epoch[56] Iteration[301/347], losses_i2t: (7.862), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.439), Base Lr: 3.50e-06
+Test Epoch: 56
+Evaluation Time:	 1.603
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 93.12% | Rank-10: 96.30%| Rank-20: 99.47%| mAP: 50.46%| mINP: 10.18%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 56.387
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[57] Iteration[1/347], losses_i2t: (8.166), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.515), Base Lr: 3.50e-06
+Epoch[57] Iteration[101/347], losses_i2t: (7.885), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.446), Base Lr: 3.50e-06
+Epoch[57] Iteration[201/347], losses_i2t: (7.870), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.423), Base Lr: 3.50e-06
+Epoch[57] Iteration[301/347], losses_i2t: (7.854), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.413), Base Lr: 3.50e-06
+Test Epoch: 57
+Evaluation Time:	 1.619
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 50.29%| mINP: 10.02%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 46.646
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[58] Iteration[1/347], losses_i2t: (7.764), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.554), Base Lr: 3.50e-06
+Epoch[58] Iteration[101/347], losses_i2t: (7.810), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.398), Base Lr: 3.50e-06
+Epoch[58] Iteration[201/347], losses_i2t: (7.816), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.407), Base Lr: 3.50e-06
+Epoch[58] Iteration[301/347], losses_i2t: (7.810), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.412), Base Lr: 3.50e-06
+Test Epoch: 58
+Evaluation Time:	 1.609
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.75%| mINP: 10.41%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 72.635
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[59] Iteration[1/347], losses_i2t: (7.889), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.294), Base Lr: 3.50e-06
+Epoch[59] Iteration[101/347], losses_i2t: (7.786), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.420), Base Lr: 3.50e-06
+Epoch[59] Iteration[201/347], losses_i2t: (7.800), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.413), Base Lr: 3.50e-06
+Epoch[59] Iteration[301/347], losses_i2t: (7.792), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.415), Base Lr: 3.50e-06
+Test Epoch: 59
+Evaluation Time:	 1.612
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.59% | Rank-10: 96.30%| Rank-20: 99.47%| mAP: 50.73%| mINP: 10.23%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 45.154
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[60] Iteration[1/347], losses_i2t: (7.858), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.455), Base Lr: 3.50e-06
+Epoch[60] Iteration[101/347], losses_i2t: (7.753), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.437), Base Lr: 3.50e-06
+Epoch[60] Iteration[201/347], losses_i2t: (7.759), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.429), Base Lr: 3.50e-06
+Epoch[60] Iteration[301/347], losses_i2t: (7.785), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.430), Base Lr: 3.50e-06
+Test Epoch: 60
+Evaluation Time:	 1.603
+Performance[ALL]: Rank-1: 70.90% | Rank-5: 92.06% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.02%| mINP: 10.45%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 39.519
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[61] Iteration[1/347], losses_i2t: (7.843), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.212), Base Lr: 3.50e-06
+Epoch[61] Iteration[101/347], losses_i2t: (7.796), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.393), Base Lr: 3.50e-06
+Epoch[61] Iteration[201/347], losses_i2t: (7.794), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.400), Base Lr: 3.50e-06
+Epoch[61] Iteration[301/347], losses_i2t: (7.803), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.405), Base Lr: 3.50e-06
+Test Epoch: 61
+Evaluation Time:	 1.614
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 93.65% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 49.92%| mINP: 9.95%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 66.161
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[62] Iteration[1/347], losses_i2t: (7.716), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.498), Base Lr: 3.50e-06
+Epoch[62] Iteration[101/347], losses_i2t: (7.761), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.404), Base Lr: 3.50e-06
+Epoch[62] Iteration[201/347], losses_i2t: (7.765), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.406), Base Lr: 3.50e-06
+Epoch[62] Iteration[301/347], losses_i2t: (7.760), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.398), Base Lr: 3.50e-06
+Test Epoch: 62
+Evaluation Time:	 1.601
+Performance[ALL]: Rank-1: 74.07% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.32%| mINP: 9.80%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 77.217
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[63] Iteration[1/347], losses_i2t: (7.900), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.452), Base Lr: 3.50e-06
+Epoch[63] Iteration[101/347], losses_i2t: (7.750), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.414), Base Lr: 3.50e-06
+Epoch[63] Iteration[201/347], losses_i2t: (7.768), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.398), Base Lr: 3.50e-06
+Epoch[63] Iteration[301/347], losses_i2t: (7.763), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.406), Base Lr: 3.50e-06
+Test Epoch: 63
+Evaluation Time:	 1.622
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.27%| mINP: 10.13%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 82.930
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[64] Iteration[1/347], losses_i2t: (7.511), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.496), Base Lr: 3.50e-06
+Epoch[64] Iteration[101/347], losses_i2t: (7.736), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.418), Base Lr: 3.50e-06
+Epoch[64] Iteration[201/347], losses_i2t: (7.738), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.413), Base Lr: 3.50e-06
+Epoch[64] Iteration[301/347], losses_i2t: (7.762), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.413), Base Lr: 3.50e-06
+Test Epoch: 64
+Evaluation Time:	 1.571
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 92.06% | Rank-10: 96.30%| Rank-20: 99.47%| mAP: 49.94%| mINP: 9.86%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 56.920
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[65] Iteration[1/347], losses_i2t: (7.799), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.303), Base Lr: 3.50e-06
+Epoch[65] Iteration[101/347], losses_i2t: (7.800), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.402), Base Lr: 3.50e-06
+Epoch[65] Iteration[201/347], losses_i2t: (7.790), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.399), Base Lr: 3.50e-06
+Epoch[65] Iteration[301/347], losses_i2t: (7.791), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.401), Base Lr: 3.50e-06
+Test Epoch: 65
+Evaluation Time:	 1.850
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 91.01% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 49.80%| mINP: 10.03%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 50.925
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[66] Iteration[1/347], losses_i2t: (7.760), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.355), Base Lr: 3.50e-06
+Epoch[66] Iteration[101/347], losses_i2t: (7.802), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.409), Base Lr: 3.50e-06
+Epoch[66] Iteration[201/347], losses_i2t: (7.811), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.405), Base Lr: 3.50e-06
+Epoch[66] Iteration[301/347], losses_i2t: (7.802), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.402), Base Lr: 3.50e-06
+Test Epoch: 66
+Evaluation Time:	 1.616
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 91.53% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.01%| mINP: 10.09%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 44.418
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[67] Iteration[1/347], losses_i2t: (7.712), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.283), Base Lr: 3.50e-06
+Epoch[67] Iteration[101/347], losses_i2t: (7.777), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.376), Base Lr: 3.50e-06
+Epoch[67] Iteration[201/347], losses_i2t: (7.789), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.395), Base Lr: 3.50e-06
+Epoch[67] Iteration[301/347], losses_i2t: (7.797), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.392), Base Lr: 3.50e-06
+Test Epoch: 67
+Evaluation Time:	 1.762
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 91.53% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 50.18%| mINP: 10.20%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 72.243
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[68] Iteration[1/347], losses_i2t: (7.723), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.309), Base Lr: 3.50e-06
+Epoch[68] Iteration[101/347], losses_i2t: (7.798), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.398), Base Lr: 3.50e-06
+Epoch[68] Iteration[201/347], losses_i2t: (7.798), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.403), Base Lr: 3.50e-06
+Epoch[68] Iteration[301/347], losses_i2t: (7.793), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.399), Base Lr: 3.50e-06
+Test Epoch: 68
+Evaluation Time:	 1.687
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 50.79%| mINP: 10.03%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 273.988
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[69] Iteration[1/347], losses_i2t: (7.819), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.590), Base Lr: 3.50e-06
+Epoch[69] Iteration[101/347], losses_i2t: (7.739), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.370), Base Lr: 3.50e-06
+Epoch[69] Iteration[201/347], losses_i2t: (7.734), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.387), Base Lr: 3.50e-06
+Epoch[69] Iteration[301/347], losses_i2t: (7.726), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.391), Base Lr: 3.50e-06
+Test Epoch: 69
+Evaluation Time:	 1.676
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.31%| mINP: 9.88%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 159.273
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[70] Iteration[1/347], losses_i2t: (7.481), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.205), Base Lr: 3.50e-06
+Epoch[70] Iteration[101/347], losses_i2t: (7.747), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.398), Base Lr: 3.50e-06
+Epoch[70] Iteration[201/347], losses_i2t: (7.723), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.388), Base Lr: 3.50e-06
+Epoch[70] Iteration[301/347], losses_i2t: (7.718), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.385), Base Lr: 3.50e-06
+Test Epoch: 70
+Evaluation Time:	 1.708
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.57%| mINP: 9.99%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 262.127
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[71] Iteration[1/347], losses_i2t: (7.797), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.180), Base Lr: 3.50e-06
+Epoch[71] Iteration[101/347], losses_i2t: (7.688), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.389), Base Lr: 3.50e-06
+Epoch[71] Iteration[201/347], losses_i2t: (7.686), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.404), Base Lr: 3.50e-06
+Epoch[71] Iteration[301/347], losses_i2t: (7.692), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.394), Base Lr: 3.50e-06
+Test Epoch: 71
+Evaluation Time:	 1.704
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 91.53% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 50.10%| mINP: 9.80%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 49.184
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[72] Iteration[1/347], losses_i2t: (7.672), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.469), Base Lr: 3.50e-06
+Epoch[72] Iteration[101/347], losses_i2t: (7.744), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.393), Base Lr: 3.50e-06
+Epoch[72] Iteration[201/347], losses_i2t: (7.734), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.394), Base Lr: 3.50e-06
+Epoch[72] Iteration[301/347], losses_i2t: (7.731), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.400), Base Lr: 3.50e-06
+Test Epoch: 72
+Evaluation Time:	 1.535
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 92.06% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.73%| mINP: 10.21%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 58.119
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[73] Iteration[1/347], losses_i2t: (7.821), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.271), Base Lr: 3.50e-06
+Epoch[73] Iteration[101/347], losses_i2t: (7.692), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.379), Base Lr: 3.50e-06
+Epoch[73] Iteration[201/347], losses_i2t: (7.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.378), Base Lr: 3.50e-06
+Epoch[73] Iteration[301/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.382), Base Lr: 3.50e-06
+Test Epoch: 73
+Evaluation Time:	 2.144
+Performance[ALL]: Rank-1: 73.02% | Rank-5: 91.01% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.15%| mINP: 9.82%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 68.774
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[74] Iteration[1/347], losses_i2t: (7.923), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.311), Base Lr: 3.50e-06
+Epoch[74] Iteration[101/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.376), Base Lr: 3.50e-06
+Epoch[74] Iteration[201/347], losses_i2t: (7.711), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.388), Base Lr: 3.50e-06
+Epoch[74] Iteration[301/347], losses_i2t: (7.708), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.384), Base Lr: 3.50e-06
+Test Epoch: 74
+Evaluation Time:	 2.248
+Performance[ALL]: Rank-1: 70.90% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.68%| mINP: 9.77%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 14.439
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[75] Iteration[1/347], losses_i2t: (7.717), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.393), Base Lr: 3.50e-06
+Epoch[75] Iteration[101/347], losses_i2t: (7.749), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.380), Base Lr: 3.50e-06
+Epoch[75] Iteration[201/347], losses_i2t: (7.766), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.388), Base Lr: 3.50e-06
+Epoch[75] Iteration[301/347], losses_i2t: (7.765), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.384), Base Lr: 3.50e-06
+Test Epoch: 75
+Evaluation Time:	 1.640
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 50.29%| mINP: 9.78%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 293.830
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[76] Iteration[1/347], losses_i2t: (7.605), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.390), Base Lr: 3.50e-06
+Epoch[76] Iteration[101/347], losses_i2t: (7.772), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.397), Base Lr: 3.50e-06
+Epoch[76] Iteration[201/347], losses_i2t: (7.751), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.384), Base Lr: 3.50e-06
+Epoch[76] Iteration[301/347], losses_i2t: (7.752), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.387), Base Lr: 3.50e-06
+Test Epoch: 76
+Evaluation Time:	 1.779
+Performance[ALL]: Rank-1: 71.43% | Rank-5: 92.59% | Rank-10: 95.77%| Rank-20: 99.47%| mAP: 49.65%| mINP: 9.66%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 34.691
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[77] Iteration[1/347], losses_i2t: (7.762), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.169), Base Lr: 3.50e-06
+Epoch[77] Iteration[101/347], losses_i2t: (7.727), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.388), Base Lr: 3.50e-06
+Epoch[77] Iteration[201/347], losses_i2t: (7.725), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.389), Base Lr: 3.50e-06
+Epoch[77] Iteration[301/347], losses_i2t: (7.721), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.386), Base Lr: 3.50e-06
+Test Epoch: 77
+Evaluation Time:	 1.693
+Performance[ALL]: Rank-1: 70.90% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.99%| mINP: 9.81%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 96.919
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[78] Iteration[1/347], losses_i2t: (7.924), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.297), Base Lr: 3.50e-06
+Epoch[78] Iteration[101/347], losses_i2t: (7.696), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.347), Base Lr: 3.50e-06
+Epoch[78] Iteration[201/347], losses_i2t: (7.706), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.355), Base Lr: 3.50e-06
+Epoch[78] Iteration[301/347], losses_i2t: (7.707), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.360), Base Lr: 3.50e-06
+Test Epoch: 78
+Evaluation Time:	 1.642
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 92.06% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 50.28%| mINP: 9.92%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 118.042
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[79] Iteration[1/347], losses_i2t: (7.461), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.290), Base Lr: 3.50e-06
+Epoch[79] Iteration[101/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.403), Base Lr: 3.50e-06
+Epoch[79] Iteration[201/347], losses_i2t: (7.701), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.394), Base Lr: 3.50e-06
+Epoch[79] Iteration[301/347], losses_i2t: (7.707), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.387), Base Lr: 3.50e-06
+Test Epoch: 79
+Evaluation Time:	 1.631
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 94.71% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.01%| mINP: 9.29%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 10.842
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[80] Iteration[1/347], losses_i2t: (7.727), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.274), Base Lr: 3.50e-06
+Epoch[80] Iteration[101/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.407), Base Lr: 3.50e-06
+Epoch[80] Iteration[201/347], losses_i2t: (7.705), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.394), Base Lr: 3.50e-06
+Epoch[80] Iteration[301/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.388), Base Lr: 3.50e-06
+Test Epoch: 80
+Evaluation Time:	 1.653
+Performance[ALL]: Rank-1: 69.31% | Rank-5: 93.65% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 49.73%| mINP: 9.75%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 129.545
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[81] Iteration[1/347], losses_i2t: (7.695), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.279), Base Lr: 3.50e-06
+Epoch[81] Iteration[101/347], losses_i2t: (7.742), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.362), Base Lr: 3.50e-06
+Epoch[81] Iteration[201/347], losses_i2t: (7.727), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.355), Base Lr: 3.50e-06
+Epoch[81] Iteration[301/347], losses_i2t: (7.725), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.361), Base Lr: 3.50e-06
+Test Epoch: 81
+Evaluation Time:	 1.770
+Performance[ALL]: Rank-1: 68.78% | Rank-5: 93.12% | Rank-10: 97.35%| Rank-20: 98.94%| mAP: 50.10%| mINP: 9.92%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 320.265
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[82] Iteration[1/347], losses_i2t: (7.905), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.473), Base Lr: 3.50e-06
+Epoch[82] Iteration[101/347], losses_i2t: (7.704), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.368), Base Lr: 3.50e-06
+Epoch[82] Iteration[201/347], losses_i2t: (7.683), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.358), Base Lr: 3.50e-06
+Epoch[82] Iteration[301/347], losses_i2t: (7.683), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.360), Base Lr: 3.50e-06
+Test Epoch: 82
+Evaluation Time:	 1.633
+Performance[ALL]: Rank-1: 72.49% | Rank-5: 93.65% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 49.73%| mINP: 10.02%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 167.470
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[83] Iteration[1/347], losses_i2t: (7.942), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.366), Base Lr: 3.50e-06
+Epoch[83] Iteration[101/347], losses_i2t: (7.647), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.369), Base Lr: 3.50e-06
+Epoch[83] Iteration[201/347], losses_i2t: (7.634), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.366), Base Lr: 3.50e-06
+Epoch[83] Iteration[301/347], losses_i2t: (7.647), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.377), Base Lr: 3.50e-06
+Test Epoch: 83
+Evaluation Time:	 1.657
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 91.53% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.59%| mINP: 9.75%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 77.762
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[84] Iteration[1/347], losses_i2t: (7.530), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.227), Base Lr: 3.50e-06
+Epoch[84] Iteration[101/347], losses_i2t: (7.680), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.347), Base Lr: 3.50e-06
+Epoch[84] Iteration[201/347], losses_i2t: (7.670), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.362), Base Lr: 3.50e-06
+Epoch[84] Iteration[301/347], losses_i2t: (7.663), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.374), Base Lr: 3.50e-06
+Test Epoch: 84
+Evaluation Time:	 1.550
+Performance[ALL]: Rank-1: 71.43% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 49.95%| mINP: 9.70%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 22.520
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[85] Iteration[1/347], losses_i2t: (7.673), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.536), Base Lr: 3.50e-06
+Epoch[85] Iteration[101/347], losses_i2t: (7.710), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.375), Base Lr: 3.50e-06
+Epoch[85] Iteration[201/347], losses_i2t: (7.705), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.362), Base Lr: 3.50e-06
+Epoch[85] Iteration[301/347], losses_i2t: (7.699), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.361), Base Lr: 3.50e-06
+Test Epoch: 85
+Evaluation Time:	 1.666
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 98.94%| mAP: 49.44%| mINP: 9.55%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 122.187
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[86] Iteration[1/347], losses_i2t: (7.531), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.498), Base Lr: 3.50e-06
+Epoch[86] Iteration[101/347], losses_i2t: (7.679), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.366), Base Lr: 3.50e-06
+Epoch[86] Iteration[201/347], losses_i2t: (7.692), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.359), Base Lr: 3.50e-06
+Epoch[86] Iteration[301/347], losses_i2t: (7.695), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.362), Base Lr: 3.50e-06
+Test Epoch: 86
+Evaluation Time:	 1.729
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 93.12% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 49.19%| mINP: 9.74%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 63.232
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[87] Iteration[1/347], losses_i2t: (7.631), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.420), Base Lr: 3.50e-06
+Epoch[87] Iteration[101/347], losses_i2t: (7.689), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.380), Base Lr: 3.50e-06
+Epoch[87] Iteration[201/347], losses_i2t: (7.708), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.364), Base Lr: 3.50e-06
+Epoch[87] Iteration[301/347], losses_i2t: (7.726), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.364), Base Lr: 3.50e-06
+Test Epoch: 87
+Evaluation Time:	 1.640
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 93.12% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.19%| mINP: 9.60%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 41.822
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[88] Iteration[1/347], losses_i2t: (7.725), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.251), Base Lr: 3.50e-06
+Epoch[88] Iteration[101/347], losses_i2t: (7.749), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.364), Base Lr: 3.50e-06
+Epoch[88] Iteration[201/347], losses_i2t: (7.742), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.363), Base Lr: 3.50e-06
+Epoch[88] Iteration[301/347], losses_i2t: (7.729), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.364), Base Lr: 3.50e-06
+Test Epoch: 88
+Evaluation Time:	 5.000
+Performance[ALL]: Rank-1: 68.78% | Rank-5: 93.65% | Rank-10: 96.83%| Rank-20: 98.94%| mAP: 49.28%| mINP: 9.41%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 165.280
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[89] Iteration[1/347], losses_i2t: (7.861), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.566), Base Lr: 3.50e-06
+Epoch[89] Iteration[101/347], losses_i2t: (7.713), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.389), Base Lr: 3.50e-06
+Epoch[89] Iteration[201/347], losses_i2t: (7.700), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.370), Base Lr: 3.50e-06
+Epoch[89] Iteration[301/347], losses_i2t: (7.704), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.364), Base Lr: 3.50e-06
+Test Epoch: 89
+Evaluation Time:	 1.860
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 93.65% | Rank-10: 97.88%| Rank-20: 98.94%| mAP: 49.95%| mINP: 9.85%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 9.264
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[90] Iteration[1/347], losses_i2t: (7.632), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.239), Base Lr: 3.50e-06
+Epoch[90] Iteration[101/347], losses_i2t: (7.643), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.361), Base Lr: 3.50e-06
+Epoch[90] Iteration[201/347], losses_i2t: (7.666), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.355), Base Lr: 3.50e-06
+Epoch[90] Iteration[301/347], losses_i2t: (7.674), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.358), Base Lr: 3.50e-06
+Test Epoch: 90
+Evaluation Time:	 1.855
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 93.12% | Rank-10: 97.35%| Rank-20: 98.94%| mAP: 49.53%| mINP: 9.28%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 122.566
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[91] Iteration[1/347], losses_i2t: (7.731), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.180), Base Lr: 3.50e-06
+Epoch[91] Iteration[101/347], losses_i2t: (7.701), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.368), Base Lr: 3.50e-06
+Epoch[91] Iteration[201/347], losses_i2t: (7.677), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.359), Base Lr: 3.50e-06
+Epoch[91] Iteration[301/347], losses_i2t: (7.670), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.360), Base Lr: 3.50e-06
+Test Epoch: 91
+Evaluation Time:	 2.184
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 92.59% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 48.94%| mINP: 9.49%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 210.816
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[92] Iteration[1/347], losses_i2t: (7.479), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.495), Base Lr: 3.50e-06
+Epoch[92] Iteration[101/347], losses_i2t: (7.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.341), Base Lr: 3.50e-06
+Epoch[92] Iteration[201/347], losses_i2t: (7.707), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.349), Base Lr: 3.50e-06
+Epoch[92] Iteration[301/347], losses_i2t: (7.704), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.353), Base Lr: 3.50e-06
+Test Epoch: 92
+Evaluation Time:	 1.676
+Performance[ALL]: Rank-1: 70.37% | Rank-5: 93.12% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 49.38%| mINP: 9.59%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 99.027
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[93] Iteration[1/347], losses_i2t: (7.520), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.217), Base Lr: 3.50e-06
+Epoch[93] Iteration[101/347], losses_i2t: (7.716), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.358), Base Lr: 3.50e-06
+Epoch[93] Iteration[201/347], losses_i2t: (7.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.343), Base Lr: 3.50e-06
+Epoch[93] Iteration[301/347], losses_i2t: (7.689), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.340), Base Lr: 3.50e-06
+Test Epoch: 93
+Evaluation Time:	 2.626
+Performance[ALL]: Rank-1: 74.07% | Rank-5: 93.65% | Rank-10: 98.41%| Rank-20: 99.47%| mAP: 49.61%| mINP: 9.51%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 96.033
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[94] Iteration[1/347], losses_i2t: (7.956), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.327), Base Lr: 3.50e-06
+Epoch[94] Iteration[101/347], losses_i2t: (7.697), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.346), Base Lr: 3.50e-06
+Epoch[94] Iteration[201/347], losses_i2t: (7.698), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.345), Base Lr: 3.50e-06
+Epoch[94] Iteration[301/347], losses_i2t: (7.685), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.340), Base Lr: 3.50e-06
+Test Epoch: 94
+Evaluation Time:	 7.779
+Performance[ALL]: Rank-1: 71.96% | Rank-5: 93.12% | Rank-10: 96.30%| Rank-20: 98.94%| mAP: 49.18%| mINP: 9.27%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 15.192
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[95] Iteration[1/347], losses_i2t: (7.494), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.489), Base Lr: 3.50e-06
+Epoch[95] Iteration[101/347], losses_i2t: (7.657), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.351), Base Lr: 3.50e-06
+Epoch[95] Iteration[201/347], losses_i2t: (7.652), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.345), Base Lr: 3.50e-06
+Epoch[95] Iteration[301/347], losses_i2t: (7.654), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.345), Base Lr: 3.50e-06
+Test Epoch: 95
+Evaluation Time:	 1.815
+Performance[ALL]: Rank-1: 69.84% | Rank-5: 93.12% | Rank-10: 97.35%| Rank-20: 99.47%| mAP: 49.49%| mINP: 9.53%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 13.708
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[96] Iteration[1/347], losses_i2t: (7.867), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.383), Base Lr: 3.50e-06
+Epoch[96] Iteration[101/347], losses_i2t: (7.639), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.330), Base Lr: 3.50e-06
+Epoch[96] Iteration[201/347], losses_i2t: (7.656), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.340), Base Lr: 3.50e-06
+Epoch[96] Iteration[301/347], losses_i2t: (7.652), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.340), Base Lr: 3.50e-06
+Test Epoch: 96
+Evaluation Time:	 1.656
+Performance[ALL]: Rank-1: 70.90% | Rank-5: 92.06% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.62%| mINP: 9.70%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 320.655
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[97] Iteration[1/347], losses_i2t: (7.898), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.390), Base Lr: 3.50e-06
+Epoch[97] Iteration[101/347], losses_i2t: (7.649), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.353), Base Lr: 3.50e-06
+Epoch[97] Iteration[201/347], losses_i2t: (7.636), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.344), Base Lr: 3.50e-06
+Epoch[97] Iteration[301/347], losses_i2t: (7.645), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.344), Base Lr: 3.50e-06
+Test Epoch: 97
+Evaluation Time:	 1.707
+Performance[ALL]: Rank-1: 68.25% | Rank-5: 94.18% | Rank-10: 97.88%| Rank-20: 99.47%| mAP: 49.11%| mINP: 9.27%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 66.613
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[98] Iteration[1/347], losses_i2t: (7.751), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.266), Base Lr: 3.50e-06
+Epoch[98] Iteration[101/347], losses_i2t: (7.691), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.333), Base Lr: 3.50e-06
+Epoch[98] Iteration[201/347], losses_i2t: (7.669), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.332), Base Lr: 3.50e-06
+Epoch[98] Iteration[301/347], losses_i2t: (7.665), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.344), Base Lr: 3.50e-06
+Test Epoch: 98
+Evaluation Time:	 1.675
+Performance[ALL]: Rank-1: 68.25% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 49.15%| mINP: 9.76%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 37.696
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[99] Iteration[1/347], losses_i2t: (7.556), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.467), Base Lr: 3.50e-06
+Epoch[99] Iteration[101/347], losses_i2t: (7.602), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.363), Base Lr: 3.50e-06
+Epoch[99] Iteration[201/347], losses_i2t: (7.604), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.350), Base Lr: 3.50e-06
+Epoch[99] Iteration[301/347], losses_i2t: (7.612), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.343), Base Lr: 3.50e-06
+Test Epoch: 99
+Evaluation Time:	 1.689
+Performance[ALL]: Rank-1: 68.78% | Rank-5: 92.59% | Rank-10: 96.83%| Rank-20: 99.47%| mAP: 48.87%| mINP: 9.18%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+==> Extract RGB features
+Extract Features Done!
+==> Extract IR features
+Extract Features Done!
+num_label: 395
+New Dataset Information---- 
+  ----------------------------
+  subset   | # ids | # images
+  ----------------------------
+  visible  |   395 |    22258
+  thermal  |   395 |    11909
+  ----------------------------
+Data loading time:	 12.372
+len of uni_label_color: 395
+len of uni_label_thermal: 395
+IdentitySampler_nosk----
+Epoch[100] Iteration[1/347], losses_i2t: (7.935), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.350), Base Lr: 3.50e-06
+Epoch[100] Iteration[101/347], losses_i2t: (7.654), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.345), Base Lr: 3.50e-06
+Epoch[100] Iteration[201/347], losses_i2t: (7.646), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.348), Base Lr: 3.50e-06
+Epoch[100] Iteration[301/347], losses_i2t: (7.641), losses_rgb:(0.000), losses_ir:(0.000), total-losses:(0.349), Base Lr: 3.50e-06
+Test Epoch: 100
+Evaluation Time:	 1.547
+Performance[ALL]: Rank-1: 68.78% | Rank-5: 92.59% | Rank-10: 97.35%| Rank-20: 98.94%| mAP: 48.49%| mINP: 9.46%
+Best Epoch [53], Rank-1: 76.72% |  mAP: 51.46%| mINP: 10.55%
+Stage2 running time:  15:03:46.622263
+Total running time:  15:04:00.443036

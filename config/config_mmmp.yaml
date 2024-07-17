@@ -6,7 +6,7 @@
 dataset: mmmp
 data_path: /root/mmmp1_10/
 
-pseudo_labels_path: /root/sysu/pseudo_labels/   #/home/libin/proj/CCLNet/SYSU/pseudo_labels/  # Do not modify the file name 'pseudo_labels' in your dataset!!
+pseudo_labels_path: /root/sysu/pseudo_labels/    # Do not modify the file name 'pseudo_labels' in your dataset!!
 exp_setting: exp_cctv_ir_cctv_rgb
 batch_size: 4
 test_batch_size: 64
@@ -81,7 +81,7 @@ stage2_ims_per_batch: 128
 
 #if only test
 test_only: False
-# load_stage2_model_path: '/root/part_processing/M3P-master/save/checkpoint15/test150302_stage2.pth'
+# load_stage2_model_path: '/root/UNICORN/save/checkpoint15/test150302_stage2.pth'
 
 #log path
 # logs_dir: save/logs/sysu

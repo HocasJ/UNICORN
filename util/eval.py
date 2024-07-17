@@ -14,28 +14,46 @@ def tester(args, epoch, main_net, test_mode, gall_label, gall_loader, query_labe
     start = time.time()
     ptr = 0
     gall_feat = np.zeros((ngall, feat_dim))
+    # gall_label = np.zeros(ngall)
+    # gall_img = np.zeros((ngall,288,144,3))
     with torch.no_grad():
         for batch_idx, (input, label) in enumerate(gall_loader):
             batch_num = input.size(0)
+            # img = input.permute(0,2,3,1).numpy()
+            # gall_img[ptr:ptr + batch_num,...] = img
             input = Variable(input.cuda())
             feat = main_net(input, input, modal=test_mode[0])
             gall_feat[ptr:ptr + batch_num, :] = feat.detach().cpu().numpy()
+            # gall_label[ptr:ptr + batch_num] = label.detach().cpu().numpy()
             ptr = ptr + batch_num
     # print("Extracting Time:\t {:.3f}".format(time.time() - start))
+
+    # np.save('/root/M3P/wangwq/gall_feat.npy', gall_feat)
+    # np.save('/root/M3P/wangwq/gall_label.npy', gall_label)
+    # np.save('/root/M3P/wangwq.gall_img.npy', gall_img)
 
     # print("Extracting Query Feature...")
     nquery = len(query_label)
     start = time.time()
     ptr = 0
     query_feat = np.zeros((nquery, feat_dim))
+    # query_label = np.zeros(nquery)
+    # query_img = np.zeros((nquery,288,144,3))
     with torch.no_grad():
         for batch_idx, (input, label) in enumerate(query_loader):
             batch_num = input.size(0)
+            # img = input.permute(0,2,3,1).numpy()
+            # query_img[ptr:ptr + batch_num,...] = img
             input = Variable(input.cuda())
             feat = main_net(input, input, modal=test_mode[1])
             query_feat[ptr:ptr + batch_num, :] = feat.detach().cpu().numpy()
+            # query_label[ptr:ptr + batch_num] = label.detach().cpu().numpy()
             ptr = ptr + batch_num
     # print("Extracting Time:\t {:.3f}".format(time.time() - start))
+
+    # np.save('/root/M3P/wangwq/query_feat.npy', query_feat)
+    # np.save('/root/M3P/wangwq/query_label.npy', query_label)
+    # np.save('/root/M3P/wangwq.query_img.npy', query_img)
 
     start = time.time()
     # compute the similarity
